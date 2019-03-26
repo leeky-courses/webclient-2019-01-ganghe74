@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>설문조사</title>
+    </head>
+    <body>
+        <header>
+            <h1>설문지</h1>
+            소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.
+            <hr>
+        </header>
+        <section>
+            <form name="fo" method="get">
+                학년
+                <input type="radio" name="step" value="1">1학년
+                <input type="radio" name="step" value="2">2학년
+                <input type="radio" name="step" value="3">3학년
+                <input type="radio" name="step" value="4">4학년<br>
+                성별
+                <input type="radio" name="sex" value="1">남
+                <input type="radio" name="sex" value="2">여<br>
+                관심 분야
+                <select name="interest">
+                    <option value="1">모바일 소프트웨어</option>
+                    <option value="2">웹서비스</option>
+                    <option value="3">빅데이터</option>
+                </select><br>
+                진로
+                <input type="checkbox" value="1">개발
+                <input type="checkbox" value="2">기획
+                <input type="checkbox" value="3">영업
+                <input type="checkbox" value="4">창업<br>
+                남기고 싶은 말
+                <textarea cols="50" rows="10" placeholder="글을 남겨주세요"></textarea>
+            </form>
+        </section>
+        <footer>
+            <p>Copyright 2017 by Kitae</p>
+        </footer>
+    </body>
+</html>
