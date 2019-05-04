@@ -7,19 +7,14 @@
         <style>
             body {
                 margin: 0;
+                text-align: center;
             }
             nav {
-                display: inline-block;
+                display: block;
                 height: 68px;
                 width: 100%;
                 margin: 0;
                 background-color: #2D3539; 
-            }
-            .inner-nav {
-                margin: 0 auto;
-            }
-            .navbar-header {
-                margin: 22px 25px 5px 0;
             }
             ul {
                 display: inline-block;
@@ -27,18 +22,26 @@
                 padding: 0;
                 list-style-type: none;
             }
-            .logo {
-                padding: 0;
-                background-image: url(images/logo.svg);
-                background-repeat: no-repeat;
-                background-size: 220px auto;
-            }
             li {
                 display: inline-block;
             }
             a {
                 display: inline-block;
                 text-decoration: none;
+            }
+            .inner-nav {
+                margin: 0 auto;
+                max-width: 1090px;
+            }
+            .navbar-header {
+                float: left;
+                margin: 22px 25px 5px 0;
+            }
+            .logo {
+                padding: 0;
+                background-image: url(images/logo.svg);
+                background-repeat: no-repeat;
+                background-size: 220px auto;
             }
             .naver {
                 width: 60px;
@@ -58,6 +61,11 @@
                 color: #fff;
                 opacity: .5;
                 font-size: 17px;
+            }
+            .intro {
+                background-image: url(images/intro_background.jpg);
+                background-repeat: no-repeat;
+                height: 524px;
             }
         </style>
     </head>
@@ -87,5 +95,9 @@
                 </div>
             </div>
         </nav>
+        <!-- 인트로 -->
+        <div class="intro">
+
+        </div>
     </body>
 </html>
