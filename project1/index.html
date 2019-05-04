@@ -6,21 +6,17 @@
         <link rel="icon" href="images/favicon.png">
         <style>
             body {
+                position: relative;
                 margin: 0;
                 text-align: center;
-            }
-            nav {
-                display: block;
-                height: 68px;
-                width: 100%;
-                margin: 0;
-                background-color: #2D3539; 
+                font-family: NanumSquareR Regular,Helvetica Neue,Helvetica,AppleSDGothicNeo-Regular,\\B9D1\C740\ACE0\B515,malgun gothic,\\B3CB\C6C0,dotum,sans-serif;
+                line-height: 20px;
+                font-size: 13px;
             }
             ul {
                 display: inline-block;
                 margin: 0;
                 padding: 0;
-                list-style-type: none;
             }
             li {
                 display: inline-block;
@@ -29,15 +25,31 @@
                 display: inline-block;
                 text-decoration: none;
             }
-            .inner-nav {
+            a:visited {
+                color: white;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            nav {
+                display: block;
+                height: 68px;
+                width: 100%;
+                margin: 0;
+                background-color: #2D3539;
+            }
+            nav .inner-nav {
                 margin: 0 auto;
                 max-width: 1090px;
+                height: 68px;
             }
-            .navbar-header {
+            nav .navbar-header {
                 float: left;
                 margin: 22px 25px 5px 0;
             }
-            .logo {
+            nav .logo {
+                display: inline-block;
                 padding: 0;
                 background-image: url(images/logo.svg);
                 background-repeat: no-repeat;
@@ -57,15 +69,149 @@
                 vertical-align: top;
             }
             .quick-link li a {
+                position: relative;
                 padding: 0 10px 0 11px;
                 color: #fff;
                 opacity: .5;
                 font-size: 17px;
             }
+            .quick-link li a:before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                margin-top: -8px;
+                width: 1px;
+                height: 15px;
+                background-color: #000;
+                content: "";
+            }
             .intro {
+                height: 524px;
                 background-image: url(images/intro_background.jpg);
                 background-repeat: no-repeat;
-                height: 524px;
+                background-position: 50% 50%;
+                background-size: cover;
+            }
+            .intro .info-area {
+                max-width: 1080px;
+                margin: 0 auto;
+                padding: 76px 0 83px;
+            }
+            .intro .info-area .text-area {
+                float: left;
+                text-align: left;
+            }
+            .intro .info-area .text-area .intro-title {
+                margin: 25px 0 0;
+                width: 300px;
+                height: 100px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+            .intro .info-area .text-area .sub-info {
+                margin: 23px 0 55px;
+                width: 370px;
+                height: 55px;
+                background-image: url(images/sp_about_pc.png);
+                background-position: 0 -100px;
+            }
+            .intro .info-area .text-area .btn-area .btn {
+                min-width: 170px;
+                line-height: 52px;
+                font-size: 18px;
+                text-align: center;
+                border: 1px solid;
+            }
+            .intro .info-area .text-area .btn-area .btn-join {
+                color: #00ee48;
+                background-color: #434a4d;
+                border-color:#34383a;
+            }
+            .intro .info-area .text-area .btn-area .btn-primary {
+                color: #fff;
+                background-color: #00c73c;
+                border-color: #00ae34;
+            }
+
+            .intro .slide-area {
+                float: right;
+                margin-right: 50px;
+            }
+            .intro .slide-area .swiper-container {
+                width: 538px;
+                padding: 0 0 40px;
+            }
+            .intro .slide-area .swiper-container .swiper-wrapper {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+            .intro .slide-area .swiper-wrapper .slide {
+                position: relative;
+                width: 263px;
+                margin-right: 12px;
+            }
+            .intro .slide-area .swiper-wrapper .slide .story-detail {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 227px;
+                height: 91px;
+                background-color: rgba(0,0,0,.45);
+                color: #fff;
+            }
+            .intro .slide-area .swiper-wrapper .slide .story-detail a {
+                position: relative;
+                padding: 28px 20px 15px;
+            }
+            .intro .slide-area .swiper-wrapper .slide .story-detail a:before {
+                position: absolute;
+                background-image: url(images/sp_about_pc.png);
+                top: 15px;
+                right: 50%;
+                margin-right: -9px;
+                width: 18px;
+                height: 10px;
+                background-position: -70px -880px;
+                content: "";
+            }
+            .intro .slide-area .swiper-wrapper .slide .story-detail .desc {
+                margin: 0;
+                font-size: 16px;
+            }
+            .intro .slide-area .swiper-wrapper .slide .story-detail h3.title {
+                margin: 0;
+                font-size: 22px;
+                font-weight: 500;
+            }
+            .intro .tip-area {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                color: #fff;
+                background-color: rgba(0,0,0,.5);
+            }
+            .intro .tip-area a {
+                display: inline-block;
+                padding: 26px 0 27px;
+                text-align: center;
+            }
+            .intro .tip-area .label {
+                display: inline-block;
+                width: 43px;
+                height: 18px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                background-position: -500px -120px;
+            }
+            .tip-area .tip-detail {
+                display: inline-block;
+                width: 400px;
+                height: 18px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                background-position: 0 -195px;
             }
         </style>
     </head>
@@ -84,9 +230,7 @@
                     </ul>
                     <ul class="quick-link">
                         <li>
-                            <a target="_blank" href="https://adcenter.shopping.naver.com">
-                                쇼핑파트너존
-                            </a>
+                            <a target="_blank" href="https://adcenter.shopping.naver.com">쇼핑파트너존</a>
                         </li>
                         <li>
                             <a herf="" target="_blank">광고</a>
@@ -96,8 +240,48 @@
             </div>
         </nav>
         <!-- 인트로 -->
+        <!-- 인트로의 background-image 가 새로고침 할때마다 바뀌는 부분은 미구현 -->
         <div class="intro">
-
+            <div class="info-area">
+                <div class="text-area">
+                    <div class="intro-title"></div>
+                    <div class="sub-info"></div>
+                    <div class="btn-area">
+                        <a class="btn btn-join">판매자 가입하기</a>
+                        <a class="btn btn-primary">로그인하기</a>
+                    </div>
+                </div>
+                <div class="slide-area">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="slide">
+                                <img src="images/story1.png">
+                                <div class="story-detail">
+                                    <a href>
+                                        <p class="desc">부산서 전국 상권 휩쓴</p>
+                                        <h3 class="title">라룸</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story2.png">
+                                <div class="story-detail">
+                                    <a href>
+                                        <p class="desc">농촌서 일군 강원도의 힘</p>
+                                        <h3 class="title">평창팜</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tip-area">
+                <a href="javascript:alert('팝업창은 미구현입니다')">
+                    <label class="label"></label>
+                    <span class="tip-detail"></span>
+                </a>
+            </div>
         </div>
     </body>
 </html>
