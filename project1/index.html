@@ -89,6 +89,7 @@
                 content: "";
             }
             .intro {
+                position: relative;
                 height: 524px;
                 background-image: url(images/intro_background.jpg);
                 background-repeat: no-repeat;
@@ -280,6 +281,110 @@
                 background-position: 0 -195px;
                 vertical-align: middle;
             }
+            .join h2.title {
+                background-image: url(images/sp_about_pc.png);
+                background-position: 0 -620px;
+                margin: 80px auto 50px;
+                width: 670px;
+                height: 142px;
+            }
+            .join .join-list {
+                max-width: 1028px;
+                margin: 30px auto 60px;
+            }
+            .join .join-list li {
+                float: left;
+                width: 33.3%;
+            }
+            .join .join-list li a {
+                position: relative;
+                display: block;
+                border: 1px solid #e3e7ee;
+                min-height: 192px;
+                margin: 0 5px 10px;
+                padding-top: 83px;
+                text-align: center;
+            }
+            .join .join-list li a:after {
+                position: absolute;
+                top: 27px;
+                left: 140px;
+                width: 58px;
+                height: 50px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                content: "";
+            }
+            .join .join-list li a h3.sub-title {
+                display: inline-block;
+                margin: 0 auto 14px;
+                width: 78px;
+                height: 22px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+            }
+            .join .join-list li a p {
+                margin: 0 auto;
+                width: 240px;
+                height: 38px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+            }
+            .join .join-list .document a:after {
+                background-position: 0 -1000px;
+            }
+            .join .join-list .document h3.sub-title {
+                background-position: -40px -1060px;
+            }
+            .join .join-list .document p {
+                background-position: -380px -1000px;
+            }
+            .join .join-list .window a:after {
+                background-position: -60px -1000px;
+            }
+            .join .join-list .window h3.sub-title {
+                background-position: -140px -1060px;
+            }
+            .join .join-list .window p {
+                background-position: -380px -1040px;
+            }
+            .join .join-list .safety-service a:after {
+                background-position: -180px -1000px;
+            }
+            .join .join-list .safety-service h3.sub-title {
+                background-position: -40px -1090px;
+            }
+            .join .join-list .safety-service p {
+                background-position: -380px -1120px;
+            }
+            .join .join-list .manual a:after {
+                background-position: -240px -1000px;
+            }
+            .join .join-list .manual h3.sub-title {
+                background-position: 0 -1115px;
+            }
+            .join .join-list .manual p {
+                background-position: -380px -1160px;
+            }
+            .join .join-list .fee a:after {
+                background-position: -120px -1000px;
+            }
+            .join .join-list .fee h3.sub-title {
+                background-position: -240px -1060px;
+            }
+            .join .join-list .fee p {
+                background-position: -380px -1080px;
+            }
+            .join .join-list .training-course a:after {
+                background-position: -300px -1000px;
+            }
+            .join .join-list .training-course h3.sub-title {
+                width: 88px;
+                background-position: -240px -1115px;
+            }
+            .join .join-list .training-course p {
+                background-position: -380px -1200px;
+            }
         </style>
     </head>
     <body>
@@ -359,5 +464,49 @@
                 </a>
             </div>
         </div>
+        <!-- 입점 안내 (join) -->
+        <div class="join">
+            <h2 class="title"></h2>
+            <ul class="join-list">
+                <li class="document">
+                    <a href>
+                        <h3 class="sub-title"></h3>
+                        <p class="detail"></p>
+                    </a>
+                </li>
+                <li class="window">
+                    <a href>
+                        <h3 class="sub-title"></h3>
+                        <p class="detail"></p>
+                    </a>
+                </li>
+                <li class="safety-service">
+                    <a href>
+                        <h3 class="sub-title"></h3>
+                        <p class="detail"></p>
+                    </a>
+                </li>
+                <li class="manual">
+                    <a href>
+                        <h3 class="sub-title"></h3>
+                        <p class="detail"></p>
+                    </a>
+                </li>
+                <li class="fee">
+                    <a href>
+                        <h3 class="sub-title"></h3>
+                        <p class="detail"></p>
+                    </a>
+                </li>
+                <li class="training-course">
+                    <a href>
+                        <h3 class="sub-title"></h3>
+                        <p class="detail"></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 서비스 활용 (use) -->
+        
     </body>
 </html>
