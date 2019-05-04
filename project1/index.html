@@ -5,6 +5,9 @@
         <title>네이버 스마트스토어센터</title>
         <link rel="icon" href="images/favicon.png">
         <style>
+            * {
+                box-sizing: border-box;
+            }
             body {
                 position: relative;
                 margin: 0;
@@ -97,6 +100,15 @@
                 margin: 0 auto;
                 padding: 76px 0 83px;
             }
+            .intro .info-area:before {
+                content: " ";
+                display: table;
+            }
+            .intro .info-area:after {
+                content: " ";
+                display: table;
+                clear: both;
+            }
             .intro .info-area .text-area {
                 float: left;
                 text-align: left;
@@ -136,13 +148,19 @@
 
             .intro .slide-area {
                 float: right;
+                position: relative;
                 margin-right: 50px;
             }
             .intro .slide-area .swiper-container {
+                position: relative;
+                overflow: hidden;
+                margin-left: auto;
+                margin-right: auto;
                 width: 538px;
                 padding: 0 0 40px;
             }
             .intro .slide-area .swiper-container .swiper-wrapper {
+                position: relative;
                 display: flex;
                 width: 100%;
                 height: 100%;
@@ -184,6 +202,41 @@
                 margin: 0;
                 font-size: 22px;
                 font-weight: 500;
+                line-height: 1.2;
+            }
+            .intro .slide-area .swiper-pagination {
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                width: 100%;
+            }
+            .intro .slide-area .swiper-pagination .swiper-pagination-bullet {
+                display: inline-block;
+                margin: 0 1px;
+                width: 6px;
+                height: 6px;
+                background-color: #dddfe1;
+                opacity: 1;
+                border-radius: 100%;
+            }
+            .intro .slide-area .swiper-pagination .swiper-pagination-bullet-active {
+                margin: -2px 1px;
+                width: 10px;
+                height: 10px;
+                background-color: #00c73c;
+            }
+            .intro .slide-area .swiper-button-next {
+                position: absolute;
+                margin-top: -22px;
+                margin-left: 289px;
+                top: 160px;
+                left: 50%;
+                right: 0;
+                width: 23px;
+                height: 42px;
+                opacity: .6;
+                background-image: url(images/sp_about_pc.png);
+                background-position: -720px 0;
             }
             .intro .tip-area {
                 position: absolute;
@@ -191,11 +244,23 @@
                 width: 100%;
                 color: #fff;
                 background-color: rgba(0,0,0,.5);
+                line-height: 19px;
             }
             .intro .tip-area a {
                 display: inline-block;
                 padding: 26px 0 27px;
                 text-align: center;
+            }
+            .intro .tip-area a:after {
+                display: inline-block;
+                margin-left: 5px;
+                width: 8px;
+                height: 13px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                background-position: -550px -120px;
+                content: "";
+                vertical-align: middle;
             }
             .intro .tip-area .label {
                 display: inline-block;
@@ -204,6 +269,7 @@
                 background-image: url(images/sp_about_pc.png);
                 background-repeat: no-repeat;
                 background-position: -500px -120px;
+                vertical-align: middle;
             }
             .tip-area .tip-detail {
                 display: inline-block;
@@ -212,6 +278,7 @@
                 background-image: url(images/sp_about_pc.png);
                 background-repeat: no-repeat;
                 background-position: 0 -195px;
+                vertical-align: middle;
             }
         </style>
     </head>
@@ -240,7 +307,8 @@
             </div>
         </nav>
         <!-- 인트로 -->
-        <!-- 인트로의 background-image 가 새로고침 할때마다 바뀌는 부분은 미구현 -->
+        <!-- 새로고침 할때마다 background-image, tip-area 가 바뀌는 부분은 미구현 -->
+        <!-- 슬라이드 넘기기 미구현 -->
         <div class="intro">
             <div class="info-area">
                 <div class="text-area">
@@ -263,7 +331,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="slide">
+                            <div class="slide" style="margin-right: 0;">
                                 <img src="images/story2.png">
                                 <div class="story-detail">
                                     <a href>
@@ -273,7 +341,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-pagination">
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet"></span>
+                        </div>
                     </div>
+                    <a href role="button" class="swiper-button-next"></a>
                 </div>
             </div>
             <div class="tip-area">
