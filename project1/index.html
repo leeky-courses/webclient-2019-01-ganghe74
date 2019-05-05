@@ -14,7 +14,7 @@
                 text-align: center;
                 font-family: NanumSquareR Regular,Helvetica Neue,Helvetica,AppleSDGothicNeo-Regular,\\B9D1\C740\ACE0\B515,malgun gothic,\\B3CB\C6C0,dotum,sans-serif;
                 line-height: 20px;
-                font-size: 13px;
+                font-size: 0;
             }
             ul {
                 display: inline-block;
@@ -50,6 +50,7 @@
             nav .navbar-header {
                 float: left;
                 margin: 22px 25px 5px 0;
+                font-size: 0;
             }
             nav .logo {
                 display: inline-block;
@@ -104,15 +105,6 @@
                 margin: 0 auto;
                 padding: 76px 0 83px;
             }
-            .intro .info-area:before {
-                content: " ";
-                display: table;
-            }
-            .intro .info-area:after {
-                content: " ";
-                display: table;
-                clear: both;
-            }
             .intro .info-area .text-area {
                 float: left;
                 text-align: left;
@@ -133,6 +125,7 @@
                 background-position: 0 -100px;
             }
             .intro .info-area .text-area .btn-area .btn {
+                padding: 0 15px;
                 min-width: 170px;
                 line-height: 52px;
                 font-size: 18px;
@@ -145,11 +138,11 @@
                 border-color:#34383a;
             }
             .intro .info-area .text-area .btn-area .btn-primary {
+                margin-left: 10px;
                 color: #fff;
                 background-color: #00c73c;
                 border-color: #00ae34;
             }
-
             .intro .slide-area {
                 float: right;
                 position: relative;
@@ -172,7 +165,9 @@
             .intro .slide-area .swiper-wrapper .slide {
                 position: relative;
                 width: 263px;
+                height: 317.94px;
                 margin-right: 12px;
+                overflow: hidden;
             }
             .intro .slide-area .swiper-wrapper .slide .story-detail {
                 position: absolute;
@@ -209,14 +204,16 @@
                 line-height: 1.2;
             }
             .intro .slide-area .swiper-pagination {
+                display: table;
                 position: absolute;
                 bottom: 10px;
                 left: 0;
                 width: 100%;
             }
             .intro .slide-area .swiper-pagination .swiper-pagination-bullet {
-                display: inline-block;
-                margin: 0 1px;
+                display: inline-block;;
+                vertical-align: middle;
+                margin: 0 2px;
                 width: 6px;
                 height: 6px;
                 background-color: #dddfe1;
@@ -224,7 +221,7 @@
                 border-radius: 100%;
             }
             .intro .slide-area .swiper-pagination .swiper-pagination-bullet-active {
-                margin: -2px 1px;
+                margin: -2px 2px;
                 width: 10px;
                 height: 10px;
                 background-color: #00c73c;
@@ -297,7 +294,7 @@
             }
             .join .join-list {
                 max-width: 1028px;
-                margin: 30px auto 60px;
+                margin: 0px auto 60px;
             }
             .join .join-list li {
                 float: left;
@@ -323,7 +320,7 @@
                 content: "";
             }
             .join .join-list li a h3.sub-title {
-                display: inline-block;
+                display: block;
                 margin: 0 auto 14px;
                 width: 78px;
                 height: 22px;
@@ -359,6 +356,7 @@
                 background-position: -180px -1000px;
             }
             .join .join-list .safety-service h3.sub-title {
+                width: 245px;
                 background-position: -40px -1090px;
             }
             .join .join-list .safety-service p {
@@ -368,6 +366,7 @@
                 background-position: -240px -1000px;
             }
             .join .join-list .manual h3.sub-title {
+                width: 221px;
                 background-position: 0 -1115px;
             }
             .join .join-list .manual p {
@@ -377,6 +376,7 @@
                 background-position: -120px -1000px;
             }
             .join .join-list .fee h3.sub-title {
+                width: 60px;
                 background-position: -240px -1060px;
             }
             .join .join-list .fee p {
@@ -439,13 +439,26 @@
                 width: 52px;
                 height: 42px;
                 content: "";
+                opacity: .5;
             }
             .use .slidenav .swiper-wrapper .swiper-slide .img-txt {
                 margin: 7px auto 0;
                 height: 38px;
                 background-image: url(images/sp_about_pc.png);
                 background-repeat: no-repeat;
+                opacity: .4;
             }
+            .use .slidenav .swiper-wrapper .swiper-slide .active .ico-area {
+                background-color: #00c73c;
+                border: 1px solid #00c73c;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .active .ico-area:before {
+                opacity: 1;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .active .img-txt {
+                opacity: 1;
+            }
+
             .use .slidenav .swiper-wrapper .swiper-slide .npay .ico-area:before {
                 background-position: 0 -820px;
             }
@@ -778,7 +791,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href class="ntalk">
+                            <a href class="ntalk active">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
@@ -828,7 +841,7 @@
             </div>
             <a href class="swiper-button swiper-button-next"></a>
             <a href class="swiper-button swiper-button-prev"></a>
-        </div>
+        <!-- use div태그 는 footer 뒤에서 종료-->
         <!-- footer -->
         <footer>
             <div class="inner-footer">
@@ -864,5 +877,6 @@
                 </address>
             </div>
         </footer>
+        </div>
     </body>
 </html>
