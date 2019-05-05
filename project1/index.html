@@ -281,6 +281,10 @@
                 background-position: 0 -195px;
                 vertical-align: middle;
             }
+            .join {
+                background-color: #fff;
+                overflow: hidden;
+            }
             .join h2.title {
                 background-image: url(images/sp_about_pc.png);
                 background-position: 0 -620px;
@@ -385,6 +389,147 @@
             .join .join-list .training-course p {
                 background-position: -380px -1200px;
             }
+            .use {
+                position: relative;
+                background-color:#f2f4f7;
+                overflow: hidden;
+            }
+            .use h2.title {
+                margin: 80px auto 50px;
+                width: 670px;
+                height: 142px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                background-position: 0 -470px;
+            }
+            .use .slidenav {
+                width: 1080px;
+                margin: 30px auto 70px;
+            }
+            .use .slidenav .swiper-wrapper {
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide {
+                position: relative;
+                float: left;
+                width: 135px;
+                height: 100%;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .ico-area {
+                position: relative;
+                display: inline-block;
+                background-color: #f6f7f9;
+                border: 1px solid #dbdbe2;
+                border-radius: 50px;
+                width: 70px;
+                height: 70px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .ico-area:before {
+                position: absolute;
+                top: 13px;
+                left: 9px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+                width: 52px;
+                height: 42px;
+                content: "";
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .img-txt {
+                margin: 7px auto 0;
+                height: 38px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .npay .ico-area:before {
+                background-position: 0 -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .npay .img-txt {
+                width: 75px;
+                background-position: -170px -890px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .ntalk .ico-area:before {
+                background-position: -60px -770px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .ntalk .img-txt {
+                width: 75px;
+                background-position: -250px -890px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .analysis .ico-area:before {
+                background-position: -180px -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .analysis .img-txt {
+                width: 92px;
+                background-position: -420px -890px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .fee .ico-area:before {
+                background-position: -240px -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .fee .img-txt {
+                width: 99px;
+                background-position: -515px -890px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .map .ico-area:before {
+                background-position: -300px -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .map .img-txt {
+                width: 94px;
+                background-position: -620px -890px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .register .ico-area:before {
+                background-position: -360px -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .register .img-txt {
+                width: 77px;
+                background-position: -170px -940px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .modoo .ico-area:before {
+                background-position: -420px -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .modoo .img-txt {
+                width: 90px;
+                background-position: -250px -940px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .price .ico-area:before {
+                background-position: -480px -820px;
+            }
+            .use .slidenav .swiper-wrapper .swiper-slide .price .img-txt {
+                width: 92px;
+                background-position: -350px -940px;
+            }
+            .use .swiper-container {
+                position: relative;
+                width: 1029px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 60px;
+            }
+            .use .swiper-container .slide {
+                position: relative;
+                width: 1029px;
+                height: 100%;
+            }
+            .use .swiper-button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -22px;
+                width: 40px;
+                height: 74px;
+                background-image: url(images/sp_about_pc.png);
+                background-repeat: no-repeat;
+            }
+            .use .swiper-button-next {
+                margin-left: 564px;
+                right: 0;
+                background-position: -640px 0;
+            }
+            .use .swiper-button-prev {
+                margin-left: -604px;
+                background-position: -600px 0;
+            }
         </style>
     </head>
     <body>
@@ -465,6 +610,7 @@
             </div>
         </div>
         <!-- 입점 안내 (join) -->
+        <!-- hover 추가 예정 -->
         <div class="join">
             <h2 class="title"></h2>
             <ul class="join-list">
@@ -507,6 +653,67 @@
             </ul>
         </div>
         <!-- 서비스 활용 (use) -->
-        
+        <div class="use">
+            <h2 class="title"></h2>
+            <div class="slidenav">
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href class="npay">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="ntalk">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="analysis">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="fee">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="map">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="register">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="modoo">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href class="price">
+                                <span class="ico-area"></span>
+                                <div class="img-txt"></div>
+                            </a>
+                        </div>
+                </div>
+            </div>
+            <div class="swiper-container">
+                <div class="slide">
+                    <img src="images/ntalk.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+            </div>
+            <a href class="swiper-button swiper-button-next"></a>
+            <a href class="swiper-button swiper-button-prev"></a
+        </div>
     </body>
 </html>
