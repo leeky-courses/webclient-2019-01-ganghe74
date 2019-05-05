@@ -28,8 +28,8 @@
                 display: inline-block;
                 text-decoration: none;
             }
-            a:visited {
-                color: white;
+            strong {
+                font-weight: 600;
             }
             img {
                 max-width: 100%;
@@ -95,6 +95,9 @@
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
                 background-size: cover;
+            }
+            .intro a:visited {
+                color: white;
             }
             .intro .info-area {
                 max-width: 1080px;
@@ -530,6 +533,116 @@
                 margin-left: -604px;
                 background-position: -600px 0;
             }
+            footer {
+                position: relative;
+                height: 240px;
+                padding-left: 0;
+                background-color: #fafafa;
+                overflow: hidden;
+            }
+            footer a:link {
+                color: #303236;
+            }
+            footer a:visited {
+                color: #303236;
+            }
+            footer .inner-footer {
+                border-top: none;
+                margin: 0 40px;
+                padding: 35px 0 40px;
+                font-family: NanumGothic;
+                font-size: 12px;
+                color: #303236;
+            }
+            footer .inner-footer .provision {
+                /*overflow: hidden;*/
+                margin: 0 auto;
+            }
+            footer .inner-footer .provision li {
+                position: relative;
+                display: inline-block;
+                padding: 0 7px 0 11px;
+                line-height: 14px;
+            }
+            footer .inner-footer .provision li:before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 1px;
+                height: 11px;
+                margin-top: -5px;
+                background-color: #dadde2;
+                content: "";
+            }
+            footer .inner-footer .provision li:first-child:before {
+                display: none;
+            }
+            footer .inner-footer .provision .paragraph {
+                display: block;
+                margin: 2px 0 14px;
+            }
+            footer .inner-footer .provision .paragraph:before {
+                display: none;
+            }
+            footer .inner-footer .provision .paragraph+li:before {
+                display: none;
+            }
+            footer .inner-footer .dsc {
+                margin: 12px 0;
+                color: #767a83;
+                line-height: 1.5;
+                text-align: center;
+                font-size: 12px;
+            }
+            footer .inner-footer .btn-box {
+                display: inline-block;
+                padding: 0 5px;
+                border: 1px solid #d6d8dc;
+                background-color: #f2f5f8;
+                font-size: 11px;
+                line-height: 19px;
+            }
+            footer .inner-footer .ntalk {
+                margin-left: 10px;
+            }
+            footer .inner-footer .btn-box .fn-talktalk-fill {
+                margin: -1px 0 1px;
+                vertical-align: middle;
+                color: #00c73c;
+                font-size: 13px;
+            }
+            footer .inner-footer .btn-box .fn-talktalk-fill:before {
+                font-family: Naver Icons;
+                font-style: normal;
+                font-weight: 400;
+                text-align: center;
+                content: "\EAB0";
+            }
+            footer .inner-footer address {
+                margin: 20px 0 0;
+                font-size: 10px;
+                font-family: verdanan,sans-serif;
+                line-height: 13px;
+                color: #494949;
+                text-align: center;
+                font-style: normal;
+            }
+            footer .inner-footer address p {
+                display: inline;
+                margin: 5px 0 0;
+                vertical-align: 1px;
+            }
+            footer .inner-footer address .logo {
+
+                margin-right: 3px;
+                display: inline-block;
+                width: 60px;
+                height: 11px;
+                background-image: url(images/sp_common.png);
+                background-repeat: no-repeat;
+                background-position: -200px -40px;
+                vertical-align: middle;
+            }
         </style>
     </head>
     <body>
@@ -653,6 +766,7 @@
             </ul>
         </div>
         <!-- 서비스 활용 (use) -->
+        <!-- 스와이퍼 버튼위치 변경하기 -->
         <div class="use">
             <h2 class="title"></h2>
             <div class="slidenav">
@@ -713,7 +827,42 @@
                 </div>
             </div>
             <a href class="swiper-button swiper-button-next"></a>
-            <a href class="swiper-button swiper-button-prev"></a
+            <a href class="swiper-button swiper-button-prev"></a>
         </div>
+        <!-- footer -->
+        <footer>
+            <div class="inner-footer">
+                <ul class="provision">
+                    <li><a href title="이용약관">이용약관</a></li>
+                    <li><a href title="전자금융거래 이용약관">전자금융거래 이용약관</a></li>
+                    <li><a href title="개인정보 처리방침"><strong>개인정보 처리방침</strong></a></li>
+                    <li><a href title="청소년 보호정책">청소년 보호정책</a></li>
+                    <li><a href title="책임의 한계와 법적고지">책임의 한계와 법적고지</a></li>
+                    <li><a href title="안전거래가이드">안전거래가이드</a></li>
+                    <li><a href title="고객센터">고객센터</a></li>
+                </ul>
+                <p class="dsc">네이버㈜는 결제정보의 중개서비스 또는 통신판매중개시스템의 제공자로서, 통신판매의 당사자가 아니며, 상품의 주문, 배송 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.
+                    <br>또한 판매자와 구매자간의 직거래에 대하여 당사는 관여하지 않기 때문에 거래에 대해서는 책임을 지지 않습니다.
+                </p>
+                <ul class="provision">
+                    <li>사업자등록번호 : 220-81-62517</li>
+                    <li>통신판매업신고번호 : 제2006-경기성남-0692호</li>
+                    <li>대표이사 : 한성숙</li>
+                    <li><a href target="_blank" title="새창" class="btn-box">사업자정보확인</a></li>
+                    <li class="paragraph">주소 : 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 13561</li>
+                    <li>전화 : 1588-3819</li>
+                    <li>
+                        <a href target="_blank" class="btn-box">1:1문의</a>
+                        <a href target="_blank" class="btn-box ntalk"><i class="fn-talktalk-fill"></i>톡톡상담</a>
+                    </li>
+                </ul>
+                <address>
+                    <p><a href class="logo" target="_blank" title="새창"></a></p>
+                    Copyright ©
+                    <a href class="copy-navercorp" target="_blank" title="새창"><strong>NAVER Corp.</strong></a>
+                    All rights reserved.
+                </address>
+            </div>
+        </footer>
     </body>
 </html>
