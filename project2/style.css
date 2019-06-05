@@ -176,7 +176,7 @@ nav .logo {
     height: 317.94px;
     margin-right: 12px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(1, .01, .32, 1);
+    transition: all 0.3s;
 }
 .intro .slide-area .swiper-wrapper .slide .story-detail {
     position: absolute;
@@ -232,6 +232,7 @@ nav .logo {
     background-color: #dddfe1;
     opacity: 1;
     border-radius: 100%;
+    cursor: pointer;
 }
 .intro .slide-area .swiper-pagination .swiper-pagination-bullet-active {
     margin: -2px 2px;

@@ -130,11 +130,11 @@
                             </div>
                         </div>
                         <div class="swiper-pagination">
-                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                            <span class="swiper-pagination-bullet"></span>
-                            <span class="swiper-pagination-bullet"></span>
-                            <span class="swiper-pagination-bullet"></span>
-                            <span class="swiper-pagination-bullet"></span>
+                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active" onclick="showSlide(0)"></span>
+                            <span class="swiper-pagination-bullet" onclick="showSlide(2)"></span>
+                            <span class="swiper-pagination-bullet" onclick="showSlide(4)"></span>
+                            <span class="swiper-pagination-bullet" onclick="showSlide(6)"></span>
+                            <span class="swiper-pagination-bullet" onclick="showSlide(7)"></span>
                         </div>
                     </div>
                     <a href="#" role="button" class="swiper-button-next" onclick="showNext()"></a>
@@ -147,6 +147,7 @@
                 var slides = document.querySelectorAll('.intro .slide-area .slide');
                 var nextBtn = document.querySelector('.intro .slide-area .swiper-button-next');
                 var prevBtn = document.querySelector('.intro .slide-area .swiper-button-prev');
+                var paginations = document.querySelectorAll('.intro .slide-area .swiper-pagination-bullet');
                 function showSlide(n) { // n, n+1 번째 슬라이드를 보여줌
                     now = n;
                     pos = -(263 + 12) * n; // 263: Image Width, 12: Right Margin
@@ -154,34 +155,28 @@
                         slides[i].style.left = pos + 'px';
                         pos += 263 + 12;
                     }
+                    if (now == 7) nextBtn.style.display = "none";
+                    else nextBtn.style.display = "block";
+                    if (now == 0) prevBtn.style.display = "none";
+                    else prevBtn.style.display = "block";
+
+                    for (var i=0;i<5;++i) {
+                        if (i == parseInt((n+1)/2)) paginations[i].classList.add('swiper-pagination-bullet-active');
+                        else paginations[i].classList.remove('swiper-pagination-bullet-active');
+                    }
                 }
                 function showNext() {
                     if (now >= 7) return;
-                    else if (now == 6) {
-                        nextBtn.style.display = "none";
-                        showSlide(7);
-                    }
-                    else if (now == 0) {
-                        nextBtn.style.display = "block";
-                        showSlide(2);
-                    }
+                    else if (now == 6) showSlide(7);
                     else showSlide(now + 2);
                 }
                 function showPrev() {
                     if (now <= 1) return;
-                    else if (now == 2) {
-                        prevBtn.style.display = "none";
-                        showSlide(0);
-                    }
-                    else if (now == 7) {
-                        nextBtn.style.display = "block";
-                        showSlide(6);
-                    }
+                    else if (now == 7) showSlide(6);
                     else {
                         showSlide(now - 2);
                     }
                 }
-
                 showSlide(0);
             </script>
 
