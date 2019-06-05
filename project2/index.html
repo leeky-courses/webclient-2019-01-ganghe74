@@ -5,6 +5,7 @@
         <title>네이버 스마트스토어센터</title>
         <link rel="icon" href="images/favicon.png">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
     <body>
         <!-- 네비게이션 바 -->
@@ -55,12 +56,75 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="slide" style="margin-right: 0;">
+                            <div class="slide">
                                 <img src="images/story2.png">
                                 <div class="story-detail">
                                     <a href="javascript:alert('미구현')">
                                         <p class="desc">농촌서 일군 강원도의 힘</p>
                                         <h3 class="title">평창팜</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story3.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">소통하는 원목가구의 힘</p>
+                                        <h3 class="title">에그스타</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story4.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">전국 엄마 마음을 휩쓴 아동...</p>
+                                        <h3 class="title">코코베이비</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story5.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">꿈꾸는 청년사업가의 옷장</p>
+                                        <h3 class="title">크리에이트</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story6.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">톡톡튀는 라이프스타일 숍</p>
+                                        <h3 class="title">썸띵플레이</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story7.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">강화 농촌서 스타셀러로 변신</p>
+                                        <h3 class="title">나래농장</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story8.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">여성들의 워너비 패션숍</p>
+                                        <h3 class="title">보니</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/story9.png">
+                                <div class="story-detail">
+                                    <a href="javascript:alert('미구현')">
+                                        <p class="desc">작품이 된 유아가구 글로벌브...</p>
+                                        <h3 class="title">허니듀래빗</h3>
                                     </a>
                                 </div>
                             </div>
@@ -73,9 +137,54 @@
                             <span class="swiper-pagination-bullet"></span>
                         </div>
                     </div>
-                    <a href="javascript:alert('슬라이드 미구현')" role="button" class="swiper-button-next"></a>
+                    <a href="#" role="button" class="swiper-button-next" onclick="showNext()"></a>
+                    <a href="#" role="button" class="swiper-button-prev" onclick="showPrev()"></a>
                 </div>
             </div>
+
+            <script>
+                var now = 0;
+                var slides = document.querySelectorAll('.intro .slide-area .slide');
+                var nextBtn = document.querySelector('.intro .slide-area .swiper-button-next');
+                var prevBtn = document.querySelector('.intro .slide-area .swiper-button-prev');
+                function showSlide(n) { // n, n+1 번째 슬라이드를 보여줌
+                    now = n;
+                    pos = -(263 + 12) * n; // 263: Image Width, 12: Right Margin
+                    for (var i=0;i<slides.length;++i) {
+                        slides[i].style.left = pos + 'px';
+                        pos += 263 + 12;
+                    }
+                }
+                function showNext() {
+                    if (now >= 7) return;
+                    else if (now == 6) {
+                        nextBtn.style.display = "none";
+                        showSlide(7);
+                    }
+                    else if (now == 0) {
+                        nextBtn.style.display = "block";
+                        showSlide(2);
+                    }
+                    else showSlide(now + 2);
+                }
+                function showPrev() {
+                    if (now <= 1) return;
+                    else if (now == 2) {
+                        prevBtn.style.display = "none";
+                        showSlide(0);
+                    }
+                    else if (now == 7) {
+                        nextBtn.style.display = "block";
+                        showSlide(6);
+                    }
+                    else {
+                        showSlide(now - 2);
+                    }
+                }
+
+                showSlide(0);
+            </script>
+
             <div class="tip-area">
                 <a href="javascript:alert('팝업창 미구현')">
                     <label class="label"></label>

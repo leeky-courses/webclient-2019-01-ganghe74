@@ -161,20 +161,22 @@ nav .logo {
     margin-left: auto;
     margin-right: auto;
     width: 538px;
+    height: 357.94px;
     padding: 0 0 40px;
 }
 .intro .slide-area .swiper-container .swiper-wrapper {
     position: relative;
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 317.94px;
 }
 .intro .slide-area .swiper-wrapper .slide {
-    position: relative;
+    position: absolute;
     width: 263px;
     height: 317.94px;
     margin-right: 12px;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(1, .01, .32, 1);
 }
 .intro .slide-area .swiper-wrapper .slide .story-detail {
     position: absolute;
@@ -249,6 +251,19 @@ nav .logo {
     opacity: .6;
     background-image: url(images/sp_about_pc.png);
     background-position: -720px 0;
+}
+.intro .slide-area .swiper-button-prev {
+    position: absolute;
+    margin-top: -22px;
+    margin-left: -312px;
+    top: 160px;
+    left: 50%;
+    right: 0;
+    width: 23px;
+    height: 42px;
+    opacity: .6;
+    background-image: url(images/sp_about_pc.png);
+    background-position: -690px 0;
 }
 .intro .tip-area {
     position: absolute;
