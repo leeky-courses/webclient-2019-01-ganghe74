@@ -8,6 +8,54 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
     <body>
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close">
+                        <span>×</span>
+                    </button>
+                    <h3 class="modal-title">수수료 안내</h3>
+                </div>
+                <div class="modal-body">
+                    <dl class="seller-dl-list">
+                        <dt>입점/등록/판매 수수료</dt>
+                        <dd>
+                            <ul class="seller-ul-list">
+                                <li class="text-primary">무료</li>
+                            </ul>
+                        </dd>
+                        <dt>네이버쇼핑 매출연동수수료 (VAT 포함)</dt>
+                        <dd>
+                            <ul class="seller-ul-list">
+                                <li class="text-primary">2%</li>
+                            </ul>
+                        </dd>
+                        <dt>네이버페이 결제수수료 (VAT 포함)</dt>
+                        <dd>
+                            <ul class="seller-ul-list">
+                                <li>신용카드: <span class="text-primary">3.74%</span></li>
+                                <li>계좌이체: <span class="text-primary">1.65%</span></li>
+                                <li>무통장입금(가상계좌): <span class="text-primary">1% (최대 275원)</span></li>
+                                <li>휴대폰 결제: <span class="text-primary">3.85%</span></li>
+                                <li>네이버페이 포인트: <span class="text-primary">3.74%</span></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <script>
+            var modal = document.querySelector('.modal');
+            var closeBtn = document.querySelector('.modal .close');
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
         <!-- 네비게이션 바 -->
         <nav>
             <div class="inner-nav">

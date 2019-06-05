@@ -794,3 +794,95 @@ footer .inner-footer address .copy-navercorp:hover {
     color: #303236;
     text-decoration: underline;
 }
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal .modal-content {
+    background-color: #fff;
+    width: 650px;
+    margin: 30px auto;
+}
+.modal .modal-content .modal-header {
+    padding: 14px 20px;
+    margin: 0;
+    border: 0;
+    background-color: #00c73c;
+}
+.modal .modal-content .modal-header .modal-title {
+    margin: 0 30px 0 0;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: left;
+    font-weight: 400;
+    color: #fff;
+}
+.modal .modal-content .modal-header button {
+    float: right;
+    padding: 0;
+    margin: -2px 0 0 0;
+    border: 0;
+    opacity: 1;
+    font-size: 0;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+.modal .modal-content .modal-header button span {
+    display: block;
+    height: 15px;
+    width: 15px;
+    margin-top: 9px;
+    background-image: url(images/sp_modal.png);
+    background-position: -50px -40px;
+}
+.modal .modal-content .modal-body {
+    position: relative;
+    padding: 20px;
+    text-align: left;
+}
+.modal .modal-content .text-primary {
+    color: #00c73c;
+}
+.modal .modal-content .modal-body dl {
+    border: 1px solid #e3e7ee;
+}
+.modal .modal-content .modal-body dl dt {
+    padding: 12px 35px;
+    background-color: #f8f9fd;
+    font-size: 16px;
+    font-weight: 400;
+}
+.modal .modal-content .modal-body dl dd {
+    padding: 20px 35px;
+    border-bottom: 1px solid #e3e7ee;
+    margin-left: 0;
+    background-color: #fff;
+    font-size: 13px;
+}
+.modal .modal-content .modal-body ul {
+    display: block;
+}
+.modal .modal-content .modal-body ul li {
+    position: relative;
+    display: list-item;
+    padding: 0 0 5px 8px;
+    list-style-type: none;
+}
+.modal .modal-content .modal-body ul li:before {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #767a83;
+    content: "";
+}
+.modal .modal-content .modal-body ul li.text-primary:before {
+    background-color: #00c73c;
+}
