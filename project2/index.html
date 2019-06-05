@@ -267,49 +267,49 @@
             <div class="slidenav">
                 <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="npay">
+                            <a href="javascript:void(0)" class="npay" onclick="showSlide2(0)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="ntalk active">
+                            <a href="javascript:void(0)" class="ntalk active" onclick="showSlide2(1)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="analysis">
+                            <a href="javascript:void(0)" class="analysis" onclick="showSlide2(2)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="fee">
+                            <a href="javascript:void(0)" class="fee" onclick="showSlide2(3)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="map">
+                            <a href="javascript:void(0)" class="map" onclick="showSlide2(4)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="register">
+                            <a href="javascript:void(0)" class="register" onclick="showSlide2(5)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="modoo">
+                            <a href="javascript:void(0)" class="modoo" onclick="showSlide2(6)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="javascript:alert('슬라이드 미구현')" class="price">
+                            <a href="javascript:void(0)" class="price" onclick="showSlide2(7)">
                                 <span class="ico-area"></span>
                                 <div class="img-txt"></div>
                             </a>
@@ -318,11 +318,58 @@
             </div>
             <div class="swiper-container">
                 <div class="slide">
+                    <img src="images/npay.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+                <div class="slide">
                     <img src="images/ntalk.png" width="690" height="440" alt="서비스 활용 이미지">
                 </div>
+                <div class="slide">
+                    <img src="images/nanalysis.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+                <div class="slide">
+                    <img src="images/nfee.jpg" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+                <div class="slide">
+                    <img src="images/nmap.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+                <div class="slide">
+                    <img src="images/nregister.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+                <div class="slide">
+                    <img src="images/nmodoo.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
+                <div class="slide">
+                    <img src="images/nprice.png" width="690" height="440" alt="서비스 활용 이미지">
+                </div>
             </div>
-            <a href="javascript:alert('슬라이드 미구현')" class="swiper-button swiper-button-next"></a>
-            <a href="javascript:alert('슬라이드 미구현')" class="swiper-button swiper-button-prev"></a>
+            <a href="javascript:void(0)" class="swiper-button swiper-button-next" onclick="showNext2()"></a>
+            <a href="javascript:void(0)" class="swiper-button swiper-button-prev" onclick="showPrev2()"></a>
+            <script>
+                var slides2 = document.querySelectorAll('.use .swiper-container .slide');
+                var paginations2 = document.querySelectorAll('.use .slidenav .swiper-slide a');
+                var now2 = 1;
+                function showSlide2(n) {
+                    if (n == 8) n = 0;
+                    if (n == -1) n = 7;
+                    now2 = n;
+                    pos = -1029 * n;
+                    for (var i=0;i<slides2.length;++i) {
+                        slides2[i].style.left = pos + 'px';
+                        pos += 1029;
+                    }
+                    for (var i=0;i<paginations2.length;++i) {
+                        if (i == n) paginations2[i].classList.add('active');
+                        else paginations2[i].classList.remove('active');
+                    }
+                }
+                function showNext2() {
+                    showSlide2(now2 + 1);
+                }
+                function showPrev2() {
+                    showSlide2(now2 - 1);
+                }
+                showSlide2(1);
+            </script>
         <!-- use div태그 는 footer 뒤에서 종료-->
         <!-- footer -->
         <footer>

@@ -535,6 +535,10 @@ nav .logo {
     background-repeat: no-repeat;
     opacity: .4;
 }
+.use .slidenav .swiper-wrapper .swiper-slide .active {
+    text-decoration: none;
+    color: #000;
+}
 .use .slidenav .swiper-wrapper .swiper-slide .active .ico-area {
     background-color: #00c73c;
     border: 1px solid #00c73c;
@@ -545,15 +549,20 @@ nav .logo {
 .use .slidenav .swiper-wrapper .swiper-slide .active .img-txt {
     opacity: 1;
 }
-
 .use .slidenav .swiper-wrapper .swiper-slide .npay .ico-area:before {
     background-position: 0 -820px;
+}
+.use .slidenav .swiper-wrapper .swiper-slide .npay.active .ico-area:before {
+    background-position: 0 -770px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .npay .img-txt {
     width: 75px;
     background-position: -170px -890px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .ntalk .ico-area:before {
+    background-position: -60px -820px;
+}
+.use .slidenav .swiper-wrapper .swiper-slide .ntalk.active .ico-area:before {
     background-position: -60px -770px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .ntalk .img-txt {
@@ -563,12 +572,18 @@ nav .logo {
 .use .slidenav .swiper-wrapper .swiper-slide .analysis .ico-area:before {
     background-position: -180px -820px;
 }
+.use .slidenav .swiper-wrapper .swiper-slide .analysis.active .ico-area:before {
+    background-position: -180px -770px;
+}
 .use .slidenav .swiper-wrapper .swiper-slide .analysis .img-txt {
     width: 92px;
     background-position: -420px -890px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .fee .ico-area:before {
     background-position: -240px -820px;
+}
+.use .slidenav .swiper-wrapper .swiper-slide .fee.active .ico-area:before {
+    background-position: -240px -770px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .fee .img-txt {
     width: 99px;
@@ -577,12 +592,18 @@ nav .logo {
 .use .slidenav .swiper-wrapper .swiper-slide .map .ico-area:before {
     background-position: -300px -820px;
 }
+.use .slidenav .swiper-wrapper .swiper-slide .map.active .ico-area:before {
+    background-position: -300px -770px;
+}
 .use .slidenav .swiper-wrapper .swiper-slide .map .img-txt {
     width: 94px;
     background-position: -620px -890px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .register .ico-area:before {
     background-position: -360px -820px;
+}
+.use .slidenav .swiper-wrapper .swiper-slide .register.active .ico-area:before {
+    background-position: -360px -770px;
 }
 .use .slidenav .swiper-wrapper .swiper-slide .register .img-txt {
     width: 77px;
@@ -591,6 +612,9 @@ nav .logo {
 .use .slidenav .swiper-wrapper .swiper-slide .modoo .ico-area:before {
     background-position: -420px -820px;
 }
+.use .slidenav .swiper-wrapper .swiper-slide .modoo.active .ico-area:before {
+    background-position: -420px -770px;
+}
 .use .slidenav .swiper-wrapper .swiper-slide .modoo .img-txt {
     width: 90px;
     background-position: -250px -940px;
@@ -598,21 +622,28 @@ nav .logo {
 .use .slidenav .swiper-wrapper .swiper-slide .price .ico-area:before {
     background-position: -480px -820px;
 }
+.use .slidenav .swiper-wrapper .swiper-slide .price.active .ico-area:before {
+    background-position: -480px -770px;
+}
 .use .slidenav .swiper-wrapper .swiper-slide .price .img-txt {
     width: 92px;
     background-position: -350px -940px;
 }
 .use .swiper-container {
     position: relative;
+    overflow: hidden;
     width: 1029px;
+    height: 440px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 60px;
 }
 .use .swiper-container .slide {
-    position: relative;
+    position: absolute;
+    top: 0;
     width: 1029px;
     height: 440px;
+    transition: all 0.3s;
 }
 .use .swiper-button {
     position: absolute;
