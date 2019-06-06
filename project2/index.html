@@ -8,10 +8,521 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
     <body>
-        <div class="modal">
+        <!-- Modal : 입점서류 -->
+        <div class="modal modal-document" style="display: none">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button class="close">
+                    <button class="close" onclick="closeAllModal()">
+                        <span>×</span>
+                    </button>
+                    <h3 class="modal-title">입점 서류</h3>
+                </div>
+                <div class="modal-body">
+                    <ul class="tab">
+                        <li><a onclick="modal_document_show(0)">개인</a></li>
+                        <li><a onclick="modal_document_show(1)">사업자</a></li>
+                        <li><a onclick="modal_document_show(2)">해외 사업자</a></li>
+                    </ul>
+                    <div class="content content1">
+                        <dl class="seller-dl-list">
+                            <dt>성인</dt>
+                            <dd>
+                                <ul>
+                                    <li><strong>없음</strong></li>
+                                </ul>
+                            </dd>
+                            <dt>미성년자<span class="text-sub">(만 19세 미만/생년월일 기준)</span></dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        <strong>법정대리인 동의서 원본 </strong><span class="text-sub">1부</span>
+                                        <a href="file/DOC_718.pdf" class="btn">다운로드</a>
+                                    </li>
+                                    <li>
+                                        <strong>법정대리인 증명서 </strong><span class="text-sub">(가족관계증명서 등) 사본 1부</span>
+                                    </li>
+                                    <li><strong>법정대리인 인감증명서 </strong><span class="text-sub">사본 1부</span></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <p>
+                            ・ <strong>인감증명서 : </strong>최근 3개월 이내 발급 / 주민등록번호 뒤 7자리 마스킹
+                        </p>
+                    </div>
+                    <div class="content content2">
+                        <dl class="seller-dl-list">
+                            <dt>사업자</dt>
+                            <dd>
+                                <ul>
+                                    <li><strong>사업자등록증 </strong><span class="text-sub">사본 1부</span></li>
+                                    <li><strong>통신판매업신고증 </strong><span class="text-sub">사본 1부</span></li>
+                                    <li><strong>대표자 인감증명서 </strong><span class="text-sub">(또는 대표자 본인서명사실확인서) 사본 1부</span></li>
+                                    <li><strong>대표자 혹은 사업자 명의 통장 </strong><span class="text-sub">(또는 계좌개설확인서, 온라인통장표지) 사본 1부</span></li>
+                                </ul>
+                            </dd>
+                            <dt>법인사업자</dt>
+                            <dd>
+                                <ul class="has-partition">
+                                    <li><strong>사업자등록증 </strong><span class="text-sub">사본 1부</span></li>
+                                    <li><strong>법인 명의 통장 </strong><span class="text-sub">사본 1부</span></li>
+                                    <li><strong>통신판매업신고증 </strong><span class="text-sub">사본 1부</span></li>
+                                    <li><strong>법인등기사항전부증명서 </strong><span class="text-sub">사본 1부</span></li>
+                                    <li><strong>법인 인감 증명서 </strong><span class="text-sub">사본 1부</span></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <p>
+                            ・ <strong>사업자등록증 / 통신파매업신고증 : </strong>양 서류간 상호 / 대표자명 일치
+                            <br>
+                            ・ <strong>인감증명서 : </strong>최근 3개월 이내 발급 / 주민등록번호 뒤 7자리 마스킹
+                            <br>
+                            ・ <strong>부가가치세 면세사업자 / 면세사업자 : </strong>통신판매업신고증 필수
+                        </p>
+                    </div>
+                    <div class="content content3">
+                        <dl class="seller-dl-list">
+                            <dt>해외거주 사업자</dt>
+                            <dd>
+                                <ul>
+                                    <li><strong>대표자 해외 여권 사본 </strong><span class="text-sub">1부</span></li>
+                                    <li><strong>사업자등록증 사본</strong><span class="text-sub">(미국의 경우 IRS서류) 1부</span></li>
+                                    <li><strong>사업자 또는 법인 명의 통장 사본</strong><span class="text-sub">(해외계좌 인증 서류 가능) 1부</span></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <p>
+                            ・ <strong>비영문권 국가 : </strong>공증받은 영문번역본 함께 제출
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="window.location.replace('https\://sell.smartstore.naver.com/#/sellers/join')" class="btn-primary">시작하기</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            var modal_document_tablist = document.querySelectorAll('.modal-document .modal-body .tab li');
+            var modal_document_contents = document.querySelectorAll('.modal-document .modal-body .content');
+            function modal_document_show(n) {
+                for (var i=0;i<3;++i) {
+                    if (i == n) {
+                        modal_document_tablist[i].classList.add('active');
+                        modal_document_contents[i].style.display = 'block';
+                    }
+                    else {
+                        modal_document_tablist[i].classList.remove('active');
+                        modal_document_contents[i].style.display = 'none';
+                    }
+                }
+            }
+            modal_document_show(1);
+        </script>
+        <!-- Modal : 윈도 노출 -->
+        <div class="modal modal-window" style="display: none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" onclick="closeAllModal()">
+                        <span>×</span>
+                    </button>
+                    <h3 class="modal-title">윈도 노출</h3>
+                </div>
+                <div class="modal-body">
+                    <ul class="tab">
+                        <li><a onclick="modal_window_show(0)">스타일윈도</a></li>
+                        <li><a onclick="modal_window_show(1)">디자이너윈도</a></li>
+                        <li><a onclick="modal_window_show(2)">뷰티윈도</a></li>
+                        <li><a onclick="modal_window_show(3)">리빙윈도</a></li>
+                        <li><a onclick="modal_window_show(4)">푸드윈도</a></li>
+                        <li><a onclick="modal_window_show(5)">키즈윈도</a></li>
+                        <li><a onclick="modal_window_show(6)">플레이윈도</a></li>
+                        <li><a onclick="modal_window_show(7)">아트윈도</a></li>
+                        <li><a onclick="modal_window_show(8)">해외직구(원도)</a></li>
+                        <li><a onclick="modal_window_show(9)">펫윈도</a></li>
+                    </ul>
+                    <div class="content content1" style="display:none">
+                        <dl class="seller-dl-list">
+                            <dt>취급상품군</dt>
+                            <dd>
+                                <ul>
+                                    <li>오프라인 매장에서 판매하는 의류/잡화 등 패션 관련 상품군</li>
+                                </ul>
+                            </dd>
+                            <dt>신청조건</dt>
+                            <dd>
+                                <ul>
+                                    <li>간판 및 쇼윈도가 있는 오프라인 매장</li>
+                                    <li>오프라인 매장에서 판매하는 상품을 스타일윈도 가이드에 맞춰 상품 페이지 제작</li>
+                                    <li>온라인 판매 전반 관리 (주문, 배송 등)</li>
+                                    <li>사업자등록증 및 통신판매업신고증</li>
+                                    <li>네이버톡톡을 사용한 고객응대</li>
+                                </ul>
+                            </dd>
+                            <dt>신청불가</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        스타일윈도 컨셉에 맞지 않는 매장 및 상품
+                                        <p class="text-sub">(트렌디한 성인 의류/잡화를 취급하는 스토어 입점 가능. 유아동.전통의상.아웃도어 등의 전문매장 입점 불가)</p>
+                                    </li>
+                                    <li>매장 촬영 어려운 매장 (간판, 쇼윈도,쇼룸이 없거나 자택, 사무실 등)</li>
+                                    <li>중고, 명품 취급 매장</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="content content2" style="display:none">
+                        <dl class="seller-dl-list">
+                            <dt>취급상품군</dt>
+                            <dd>
+                                <ul>
+                                    <li>국내에서 활동중인 의류, 패션잡화 상품군의 디자이너</li>
+                                </ul>
+                            </dd>
+                            <dt>신청조건</dt>
+                            <dd>
+                                <ul>
+                                    <li>디자이너윈도는 패션 창작활동을 영위하고 있는 디자이너를 대상으로 아래와 같은 기준으로 입점 진행하고 있습니다</li>
+                                    <li>
+                                        디자이너 윈도 브랜드 입점 기준 (아래 기준 중 1가지 이상 해당 충족시 심사를 통해 입점 진행)
+                                        <p class="text-sub">
+                                            - 디자이너로 꾸준히 활동중이며 최근 2시즌 이상 컬렉션(쇼) 및 수주회등 참가한 이력이 있는 디자이너 브랜드
+                                            <br>
+                                            - 기관 및 단체에서 진행하는 국내 신진디자이너 육성 프로그램에 발탁되어 참가한 이력이 있는 디자이너 브랜드
+                                            <br>
+                                            - 기타 디자인 전문 매체(단체)에서 신진 디자이너로 소개된 디자이너로 현재 활동하고 있는 디자이너 브랜드
+                                            <br>
+                                            - 국내 유명 패션디자이너 육성 공모전 입상 경력이 있는 디자이너 브랜드
+                                            <br>
+                                            - 상기 내용에 해당이 없더라도 창작디자인을 통해 의류 및 잡화를 생산 제작하는 브랜드
+                                        </p>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>신청불가</dt>
+                            <dd>
+                                - 아래 케이스의 디자이너 브랜드는 진행 불가
+                                <ol>
+                                    <li>기업 소속으로 활동하는 디자이너 브랜드</li>
+                                    <li>의류, 잡화 상품군외 디자이너 브랜드(ex,생활용품, 가구등)</li>
+                                    <li>최근 1년간 디자이너로 활동이 전무한 브랜드</li>
+                                    <li>국내 도매 판매를 주력으로 영업을 하고 있는 브랜드</li>
+                                    <li>오픈 시 스마트스토어 상품수가 5개 미만인 경우의 브랜드</li>
+                                    <li>승인 완료 후 진행중이라도 디자이너윈도 서비스 기준에 적합하지 않은 상품등록 확인 시 서비스이용 제한 가능</li>
+                                </ol>
+                            </dd>
+                            <dt>신청 문의 시 기재 항목</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        디자이너 소개
+                                        <p class="text-sub">
+                                            - 디자이너명 (대표자명)
+                                            <br>
+                                            - 브랜드명
+                                            <br>
+                                            - 컬렉션, 해외 활동 등 소개
+                                        </p>
+                                    </li>
+                                    <li>
+                                        스마트스토어 정보 (없을 시 미기입)
+                                        <p class="text-sub">
+                                            - 스마트스토어명
+                                            <br>
+                                            - 스마트스토어 URL
+                                        </p>
+                                    </li>
+                                    <li>쇼룸 보유 유무 (없을시 공란)</li>
+                                    <li>
+                                        판매처
+                                        <p class="text-sub">
+                                            - 주요 판매처
+                                            <br>
+                                            - 온라인 판매 여부 (홈페이지 URL, 블로그 URL)
+                                        </p>
+                                    </li>
+                                    <li>
+                                        그 외 특이사항 (없을 시 미기입)
+                                        <p class="text-sub">
+                                            - 컬렉션 활동 내역 (최근 3년 자료): (없을 시 미기입)
+                                            <br>
+                                            - 해외 수출 여부: (없을 시 미기입)
+                                        </p>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="content content3" style="display:none">
+                        <dl class="seller-dl-list">
+                            <dt>취급상품군</dt>
+                            <dd>
+                                <ul>
+                                    <li>화장품/바디/헤어/네일/미용소품/향수 등 뷰티 상품군</li>
+                                    <p class="text-sub">
+                                        (미용기기/헤어기기 등 콘센트를 연결하여 사용하는 기기 제한 가능,
+                                        <br>
+                                        베이비 케어 제품군은 미취급 카테고리로 제한하나, 성인 겸용 타겟 브랜드 경우 일부허용,
+                                        <br>
+                                        성인제품군의 사용법 등으로 연상되거나 선정적으로 판단되는 경우 진행 불가)
+                                    </p>
+                                </ul>
+                            </dd>
+                            <dt>신청조건</dt>
+                            <dd>
+                                <ul>
+                                    <li>스마트스토어 새싹(4등급) 이상 스토어</li>
+                                    <li>브랜드 본사직영 / 공식수입원(정식 라이선스 소지) / 본사, 수입사의 공식 대행사, 총판(지정 1군데)뷰티윈도 가이드에 맞춰 상품 페이지 제작</li>
+                                    <li>온라인 판매 전반 관리 (주문, 배송 등)</li>
+                                    <li>사업자등록증 및 통신판매업신고증</li>
+                                </ul>
+                            </dd>
+                            <dt>신청불가</dt>
+                            <dd>
+                                <ul>
+                                    <li>뷰티윈도 컨셉에 맞지 않는 상품</li>
+                                    <li>뷰티윈도에 입점한 브랜드와 중복된 브랜드</li>
+                                </ul>
+                            </dd>
+                            <dt>신청 문의 시 기재 항목</dt>
+                            <dd>
+                                <dl class="sub">
+                                    <dt>1. 상호</dt>
+                                    <dt>2. 대표자명 (담당자명)</dt>
+                                    <dt>3. 스마트스토어 정보</dt>
+                                    <dd>
+                                        <ul>
+                                            <li>ID</li>
+                                            <li>스마트스토어명</li>
+                                            <li>스마트스토어 URL</li>
+                                        </ul>
+                                    </dd>
+                                    <dt>4. 판매 종목</dt>
+                                    <dt>5. 입점하고자하는 브랜드명과 상표권 증빙</dt>
+                                    <dt>6. 브랜드 본사, 공식수입원, 총판 여부</dt>
+                                    <dd>
+                                        <ul>
+                                            <li>
+                                                <em class="number">6-1</em>
+                                                총판인 경우 단독총판인지 복수총판인지 여부
+                                            </li>
+                                            <li>
+                                                <em class="number">6-2</em>
+                                                총판인 경우 확인을 위한 브랜드본사 혹은 공식수입원의 회사명, 담당자, 담당자 연락처(필수) 및 본사와의 협의 유무
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                    <dt>7. 대표 상품 (스마트스토어 내 상품 등록 확인 필수)</dt> 
+                                    <dt>8. 회사 소개 및 브랜드 소개</dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="content content4" style="display:none">
+                        <dl class="seller-dl-list">
+                            <dt>취급상품군</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        집을 꾸미고 살림을 하는데 필요한 모든 리빙 상품군
+                                        <br>
+                                        (가구/인테리어소품/침구/욕실/세탁/수납/청소/원예식물 카테고리)
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>신청조건</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        입점조건
+                                        <br>
+                                        <ul>
+                                            <li>간판 및 쇼룸/쇼윈도가 있는 오프라인 매장(자택/사무실불가)</li>
+                                            <li>
+                                                브랜드본사, 공식 수입원/대리점이 직접 판매하는 가구/주방 상품군인 경우,
+                                                <br>
+                                                (브랜드명 검색량 기준 최근 1년 월평균 1만이상, 카탈로그/매거진 컨텐츠 보유 필수)
+                                                <br>
+                                                컨텐츠형(블로그형) 상품상세와 플레이팅 상품이미지 & 동영상 제작가능 주방 상품군인 경우, 온/오프라인 매장 모두 입점가능
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        추가확인
+                                        <br>
+                                        <ul>
+                                            <li>사업자등록증 및 통신판매업 신고증</li>
+                                            <li>
+                                                브랜드 상표등록증(브랜드본사), 라이선스 증빙서류(공식수입원, 공식대리점) 필수
+                                                <br>
+                                                (브랜드 본사 상표등록증 제출시 보유권리란에 관련업종이 아닌 지정상품 명시)
+                                            </li>
+                                            <li>브랜드(가구,주방)의 경우 카탈로그 또는 매거진 컨텐츠 이미지 제출</li>
+                                            <li>판매 브랜드별 DB는 SKU 기준 6건 이상 보유 필요</li>
+                                            <li>오프라인 매장의 경우 매장안에서 상품을 연출하여 촬영한 상품 샘플컷 3장 제출</li>
+                                            <li>오프라인매장의 경우 사업자등록증 소재지 = 오프라인매장주소 일치시 입점 가능
+                                            <li>리빙윈도 가이드에 맞춰 상품 페이지 제작</li>
+                                            <li>온라인 판매 전반 관리 (주문, 배송 등)</li>
+                                            <li>네이버톡톡을 사용한 고객응대</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt>신청불가</dt>
+                            <dd><ul><li>리빙윈도 컨셉에 맞지 않는 매장 및 상품</li><li>매장 촬영 어려운 매장 (간판, 쇼윈도,쇼룸이 없거나 자택, 사무실 등)</li><li>매장 분위기가 산만하거나 촬영위주로 운영되는 매장(가오픈 느낌)의 경우 입점 제한</li><li>리빙윈도에 입점한 매장과 동일 사업자, 동일 상품군, 동일 운영주체의 중복 매장</li><li>캔들, 방향제 제품의 KC마크가 없는 상품</li><li>도매 상품만 취급 또는 도매 이미지만을 사용 하는 매장</li><li>샵앤샵 입점 매장, 백화점 집합체 입점 매장</li><li>사진 인쇄로 상품을 만들어주는 업체</li><li>해외배송 배송, 구매대행 상품</li></ul></dd>
+                            <dt>주의사항</dt>
+                            <dd><ul><li>최종 스토어 오픈 조건<p class="text-sub">- 상품검수완료 기준 6개 이상<br>- 6개 미만일 경우 서비스 오픈 제한 가능</p></li><li>승인 완료 후 진행 중 리빙윈도 서비스 기준에 적합하지 않은 상품 등록 확인 시 서비스 이용 제한 가능</li><li>월 평균 1개 이상 상품 미등록시 서비스 이용 제한 가능</li></ul></dd>
+                            <dt>신청 문의 시 기재 항목</dt>
+                            <dd>
+                                <h4>[오프라인샵]</h4>
+                                <dl class="sub"><dt>1. 오프라인 매장정보</dt><dd><ul><li>매장명</li><li>매장주소</li><li>매장 전경사진</li></ul></dd><dt>2. 상품정보</dt><dd><ul><li>판매품목 (가구,생활,침구,주방,인테리어소품 등)<br><em class="text-muted sub-text">* 대표상품 4~5컷 이미지 첨부</em></li><li>특징 (수입,자체제작 등)</li></ul></dd><dt>3. 스마트스토어 정보</dt><dd><ul><li>스마트스토어명</li><li>스마트스토어 URL</li></ul></dd><dt>4. 판매처</dt><dd><ul><li>주요 판매처 (오프라인 매장, 자사몰 입점 등)</li><li>온라인 판매 여부 (홈페이지 URL, 블로그 URL 등)</li></ul></dd><dt>5. 그 외 특이사항</dt></dl>
+                                <h4>[브랜드샵]</h4>
+                                <p class="text-sub">브랜드 본사 및 공식 수입원인 경우에만 입점 가능합니다.</p>
+                                <dl class="sub"><dt>1. 판매 브랜드 및 회사 소개&nbsp;<span class="text-sub">(홈페이지 URL)</span></dt><dd>[브랜드본사] 상표등록증,<br>[공식수입원] 라이선스 증빙서류,<br>[공식대리점] 리빙윈도 단독 입점 위임장 서류 첨부 必</dd><dt>2. 스마트스토어 정보</dt><dd><ul><li>스마트스토어명</li><li>스마트스토어 URL</li></ul></dd><dt>3. 상품 정보</dt><dd><ul><li>주요 판매 품목 (가구, 주방)<br>* 대표상품 4~5컷 이미지 첨부 必</li><li>카탈로그, 매거진, 동영상 중 1개 이상 첨부 또는 URL 기재 必</li></ul></dd><dt>4. 그 외 특이사항</dt></dl>
+                                <h4>[주방용품 온라인샵]</h4>
+                                <p class="text-sub">주방용품을 전문으로 취급하는 스토어 중 직접 촬영한 고퀄리티 플레이팅 이미지 등 다양한 상품정보 컨텐츠 제작이 가능한 판매자에 한해 입점 가능합니다.</p>
+                                <dl class="sub"><dt>1. 회사 소개&nbsp;<span class="text-sub">(홈페이지 URL, 블로그 URL 등)</span></dt><dt>2. 스마트스토어 정보</dt><dd><ul``><li>스마트스토어명</li><li>스마트스토어 URL</li></ul></dd><dt>3. 상품 정보</dt><dd><ul class="has-bullet"><li>판매 품목 (주방용품)<br>* 대표상품 4~5컷 이미지 첨부</li><li>카탈로그, 매거진, 동영상 중 1개 이상 첨부 또는 URL 기재</li></ul></dd><dt>4. 주요 판매처&nbsp;<br><span class="text-sub">(오픈마켓, 종합몰, 전문몰, 자사몰 등)</span></dt><dt>5. 그 외 특이사항</dt></dl>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="content content5" style="display:none">
+                        <dl class="seller-dl-list">
+                            <dt>취급상품군</dt>
+                            <dd><ul class="seller-ul-list"><li>생산자가 직접 생산하여 산지에서 고객에게 직배송되는 식품 관련 상품군<p class="sub-text text-sub">(샘플 테스트 요청 할 수 있으며, 테스트 결과에 따라 입점불가 및 퇴점 될 수 있습니다)</p></li></ul></dd>
+                            <dt>신청조건</dt>
+                            <dd><ul class="seller-ul-list"><li>품질 불만족시 무료 교환/환불 가능 상품</li><li>푸드윈도 가이드에 맞춰 상품 페이지 제작</li><li>온라인 판매 전반 관리 (주문, 배송 등)</li><li>사업자등록증 및 통신판매업신고증</li></ul></dd>
+                            <dt>신청불가</dt>
+                            <dd><ul class="seller-ul-list"><li>푸드윈도 컨셉에 맞지 않는 상품</li><li>수입식품</li></ul></dd>
+                            <dt>신청 문의 시 기재 항목</dt>
+                            <dd>
+                                <div class="wrap-list">
+                                    <dl class="sub">
+                                        <dt>[신청서비스 : 산지직송]_신청서비스명 반드시 기재</dt>
+                                        <dt>1. 상호명</dt>
+                                        <dt>2. 대표자명</dt>
+                                    </dl>
+                                    <dl class="sub">
+                                        <dt>3. 스마트스토어명</dt>
+                                        <dt>4. 스마트스토어 URL</dt>
+                                        <dt>
+                                            5. 판매 상품<br>
+                                            <span class="text-sub">(상품명, 가격, 스마트스토어 상품 URL)</span>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="content content6" style="display:none">
+                        <dl>
+                            <dt>취급상품군</dt>
+                            <dd><ul class="seller-ul-list"><li>어린이제품 안전 특별법 및 시행령에 부합하는 유아동 상품군</li><li>(비브랜드) 오프라인 매장에서 판매하는 상품이거나 또는<br>(브랜드) 상표권이 있는 브랜드 본사, 공식 수입원, 공식 대리점이 직접 판매하는 상품​</li></ul></dd>
+                            <dt>신청조건</dt>
+                            <dd><ul class="seller-ul-list"><li>매장 / 업체<p class="text-sub">- (비브랜드) 간판 및 쇼룸/쇼윈도가 있는 오프라인 매장(자택/사무실불가)<br>- (브랜드본사) 브랜드 상표등록증, (공식수입원, 공식대리점) 라이선스 증빙서류 필수</p></li><li>키즈윈도 가이드에 맞춰 상품 페이지 제작</li><li>온라인 판매 전반 관리 (주문, 배송 등)</li><li>사업자등록증 및 통신판매업신고증</li><li>네이버톡톡을 사용한 고객응대</li><li>상품등록시, 해당 상품의 인증정보 기재 필수</li><li>스마트스토어 최근 3개월 이상 운영한 셀러</li><li>스마트스토어 최근 3개월 평균, 판매관리 페널티가 10점 미만이고<br>판매관리 페널티 비율(판매관리 페널티/결제건수) 20% 미만인 판매자​</li></ul></dd>
+                            <dt>신청불가</dt>
+                            <dd><ul class="seller-ul-list"><li>키즈윈도 컨셉에 맞지 않는 매장 및 상품</li></ul></dd>
+                            <dt>신청 문의 시 기재 항목</dt>
+                            <dd>
+                                <div class="wrap-list">
+                                    <dl class="seller-dl-list-type2">
+                                        <dt>오프라인 매장</dt>
+                                        <dd>
+                                            <dl class="sub">
+                                                <dt>1. 매장명</dt>
+                                                <dt>2. 스마트스토어 정보</dt>
+                                                <dd>
+                                                    <ul class="has-bullet">
+                                                        <li>스마트스토어명</li>
+                                                        <li>스마트스토어 URL</li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>3. 사업장소재지 (매장주소)</dt>
+                                                <dt>4. 판매 품목</dt>
+                                                <dt>5. 대표 상품</dt>
+                                            </dl>
+                                        </dd>
+                                    </dl>
+                                    <dl class="seller-dl-list-type2">
+                                        <dt>브랜드 본사 및 공식 수입원</dt>
+                                        <dd>
+                                            <dl class="sub">
+                                                <dt>1. 스마트스토어 정보</dt>
+                                                <dd>
+                                                    <ul class="has-bullet">
+                                                        <li>스마트스토어명</li>
+                                                        <li>스마트스토어 URL</li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>2. 판매 브랜드</dt>
+                                                <dt>3. 판매 품목</dt>
+                                                <dt>4. 대표 상품</dt>
+                                            </dl>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="content content7" style="display:none">
+                        <dl>
+                            <dt>취급상품군</dt>
+                            <dd><ul class="seller-ul-list"><li>디지털/스포츠/취미(키덜트)/자동차용품 상품군이며 인지도 있는 브랜드 상품, 특별한 혜택이 있는 상품, 혹은 신기한 얼리어댑터 상품</li></ul></dd>
+                            <dt>신청조건</dt>
+                            <dd><ol class="seller-ol-list"><li>네이버 쇼핑 영역 내 ‘베스트100’ 의 주간 인기브랜드 리스트에 있는 브랜드/제조사 또는 단독 공식수입원</li><li>1번의 업체가 진행 불가시, 1번의 업체가 지정해 준 총판 또는 밴더<br>- 이 경우 본사의 입점확약서 필수<br>- 자세한 내용은 쇼핑윈도 블로그 확인요망<p class="sub-text text-sub text-warning">1,2 번에 해당하는 업체는<br>- 스마트스토어 센터 로그인 후 "노출채널관리 &gt; 쇼핑윈도 노출제안"메뉴에서 플레이윈도 노출 신청(개인 / 법인 사업자만 가능)</p></li><li>기본 신청 조건 1,2번에 해당되지 않는, 유통구조가 불명확한 상품이지만 트랜드와 시의성에 맞는 얼리어답터, 아이디어 상품</li><li>유통 구조의 복잡성으로 인한 예외 카테고리 상품<br>- 낚시, 골프, 피규어/캐릭터, 프라모델 카테고리</li><li>인기브랜드 영역에 아쉽게 없지만 인지도가 높은 브랜드<br>- 자세한 내용은 쇼핑윈도 블로그 확인요망<p class="sub-text text-sub text-warning">3,4,5 번에 해당하는 업체는 아래 '신청문의시 기재 항목 참고하여 <a href="https://help.sell.smartstore.naver.com/mail/form.nhn?alias=Playwindow" class="btn-link" target="_blank">1:1 문의</a>를 이용해주세요.<br></p><p class="sub-text text-info">※ 쇼핑윈도 블로그 URL<br><a href="http://blog.naver.com/n_shopwindow/221080195702">http://blog.naver.com/n_shopwindow/221080195702</a></p></li></ol></dd>
+                            <dt>신청불가</dt>
+                            <dd><ul class="seller-ul-list"><li>플레이윈도 컨셉에 맞지 않는 상품</li><li>플레이윈도 진행 상품과 중복되는 상품</li><li>가품 혹은 가품 이슈가 발생할 가능성이 있는 상품</li><li>브랜드 인지도가 낮아 단순 홍보를 목적으로 하는 상품</li></ul></dd>
+                            <dt>신청 문의 시 기재 항목</dt>
+                            <dd><ol class="seller-ol-list"><li>상호</li><li>제안사유<p class="sub-text text-sub">- 얼리어답터 or 중복예외 카테고리 or 인기브랜드 미노출중 1개만 작성</p></li><li>스마트스토어 정보<p class="sub-text text-sub">- 스마트스토어명<br>- 스마트스토어 URL</p></li><li>업체 홈페이지 URL</li><li>입점 요청 브랜드 또는 상품 정보</li><li>해당 브랜드 또는 상품의 특장점 어필</li></ol></dd>
+                        </dl>
+                    </div>
+                    <div class="content content8" style="display:none">
+                        <dl>
+                            <dt>취급상품군</dt>
+                            <dd><ul class="seller-ul-list"><li>회화, 판화, 아트포스터, 아트 상품, 디자인 상품, 공예품, 사진</li></ul></dd>
+                            <dt>신청조건</dt>
+                            <dd><p>하기 입점 조건을 확인 후 1:1 고객센터를 통한 문의</p><br><ol class="seller-ol-list"><li>입점 조건<p class="sub-text text-sub">- 온라인을 통한 미술작품 판매 사이트인 아트윈도 컨셉에 부합하다고 판단되는 경우<br>- 오프라인 / 온라인 갤러리 운영 3년 이상인 업체<br>&nbsp;(갤러리 소개서, 갤러리 공식 사이트 등 증빙 자료 필요)<br>- 국내외 작가 활동 / 전시 경력 증빙이 가능한 작가 및 작가보유 업체<br>&nbsp;(작품 판매 / 작가 이력 확인 가능한 판매처의 공식사이트 or 프트폴리오 제출)<br>- 공신력있는 공공 문화재단, 협회 등의 추천을 받는 경우<br>&nbsp;(사이트 및 운영경력 증빙이 부족한 경우 추가 요청)<br>- 스마트스토어에 가입된 경우 사이트 URL / 사이트 이름 / 대표자명 전달<br></p></li><li>추가 확인<p class="sub-text text-sub">- 상기 입점 조건을 만족하는 업체를 대상으로 작품 리스트 요청하여 양사 논의 진행</p></li></ol></dd>
+                            <dt>신청불가</dt>
+                            <dd><ul class="seller-ul-list"><li>아트윈도 컨셉에 맞지 않는 상품</li><li>아트윈도 신청 조건에 부합하지 않는 업체</li><li>공장에서 대량생산된 공산품인 경우</li><li>판매 작품 저작권 출처 및 관리가 불분명한 경우</li><li>작가 이력의 증빙이 불분명한 경우</li><li>상시 배송주문처리가 동반되는 온라인샵 운영이 불가한 경우</li></ul></dd>
+                        </dl>
+                    </div>
+                    <div class="content content9" style="display:none">
+                            <dl>
+                                <dt>취급상품군</dt><dd><ul class="seller-ul-list"><li>해외 에서 판매하는 패션/뷰티/리빙/유아동/식품 관련 상품군</li></ul></dd><dt>신청조건</dt><dd><ul class="seller-ul-list"><li>해외직구(윈도) 서비스 지역의 현지 해외 사업자</li><li>해외직구(윈도) 가이드에 맞춰 상품 페이지 제작</li><li>온라인 판매 전반 관리 (주문,배송 등)</li><li>'네이버 해외직구 이용가능 물류사' 중 선택하여 물류사 사용<br>(배송/환불 프로세스, 관부가세 대납을 위한 예치금 납부 등 물류 가이드에 맞춰 진행 가능)</li><li>현지 직배송 필수</li></ul><br><p>※ 국내 통관불가 상품, 위해상품, 국내 온라인 판매 불가 상품 등 국내법상 문제가 있는 상품 판매 및 행위를 할 경우, 즉시 해당 스토어의 윈도 노출이 OFF 될 수 있습니다.</p><p>ex) 가품판매, 의약품/의료기기 판매, 위해식품 판매, 반품/교환 상품 국내 재판매 등</p></dd><dt>신청불가</dt><dd><ul class="seller-ul-list"><li>해외직구(윈도) 취급불가 상품군<p class="sub-text text-sub">- 국내 기준 의약품<br>- 한국 통관 불가한 상품<br>- 판매 시 국내 인증이 필요한 상품이나, 국내 인증을 받지 않은 경우(전자제품, 유아동용품, 의약외품)<br>&nbsp;단, 18년 7월 개정 전안법에 따라 KC마크없이 구매대행 가능한 전자제품에 대해 제한적으로 취급 허용<br>- 지정한 유럽 명품 브랜드 상품 및 건강기능식품군은 담당자 별도 확인 후 승인</p></li></ul></dd><dt>신청 문의 시 기재 항목</dt><dd><ol class="seller-ol-list"><li>사업자 정보<p class="sub-text text-sub">- 사업자 구분 (법인/개인)<br>- 해외사업자여부/사업장 소재지<br>- 최종 출고지(나라/도시명)</p></li><li>스마트스토어 정보<p class="sub-text text-sub">- 스마트스토어명<br>- 스마트스토어ID</p></li></ol></dd>
+                            </dl>
+                    </div>
+                    <div class="content content10">
+                        <dl><dt>취급상품군</dt><dd><ul class="seller-ul-list"><li>사료, 간식, 애완 패션&amp;리빙용품 외 강아지/고양이를 위한 상품군<p class="sub-text text-sub">(햄스터 등의 소동물, 곤충, 관상어 용품은 미 취급)</p></li></ul></dd><dt>신청조건</dt><dd><ul class="seller-ul-list"><li>스마트스토어 판매자 (사업자등록증 및 통신판매업 신고증 필수)</li><li>스마트스토어 최근 3개월 서비스 만족 등급 ‘굿 서비스’ 등급 셀러</li><li>스마트스토어 최근 3개월 평균, 판매관리 페널티가 10점 미만이고 판매관리 페널티 비율(판매관리 페널티/결제 건수) 20% 미만인 판매자</li><li>네이버 톡톡을 사용한 고객 응대 가능한 판매자</li><li>사료 및 간식 유통기한 보장제 진행이 가능한 판매자<p class="sub-text text-sub">(* 유통기한 보장제 : 사료 및 간식 유통기한 3개월 미만 제품 배송 시 무료 교환 또는 무료반품제 시행 / 단, 수제 사료 및 간식은 제외)</p></li><li>펫윈도 가이드에 맞춰 상품 페이지 제작이 가능한 판매자<p class="sub-text text-sub">1) SKU 단위로 상품 등록이 가능한 판매자(사료 및 용품-제품 구성 및 사양별 개별 등록 / 의류-디자인 &amp; 색상별 개별 등록)</p><p class="sub-text text-sub">2) 상품의 세부 속성값 100% 입력 관리 가능한 판매자</p><p class="sub-text text-sub">3) 이미지 편집 및 상품 상세 설명 Smart Editor 3.0 작업이 가능한 판매자(통이미지 상품 상세 설명 진행 불가)</p><p></p></li><li>최소 주 1건 이상의 스토어 소식 or 1건 이상의 상품 업로드가 가능한 판매자</li><li>운영 가능한 상품 수 최소 20품목 이상인 판매자</li><li>온라인 판매 전반 관리(주문, 배송, CS 등)가 가능한 판매자</li><li>애완용품 전문 판매자</li></ul></dd><dt>신청불가 및 주의사항</dt><dd><ul class="seller-ul-list"><li>펫윈도 컨셉에 맞지 않는 상품 및 판매자 입점 불가</li><li>펫윈도 입점 기준에 부합하지 않는 상품 및 판매자 입점 불가</li><li>승인 완료 후 펫윈도 서비스 기준에 적합하지 않은 상품 등록 확인 시 서비스 이용 제한될 수 있음</li><li>고의적인 상품 중복 및 판매 어뷰징 행위 등 펫윈도 판매 정책에 위배 시 서비스 이용 제한될 수 있음</li><li>​그 외 펫윈도 서비스 품질 관리를 위해 필요하다고 판단되는 경우 입점 및 서비스 이용이 제한될 수 있음</li></ul></dd><dt>신청 문의 시 기재 항목</dt><dd><ol class="seller-ol-list"><li>상호</li><li>대표자명</li><li>스마트스토어 정보<p class="sub-text text-sub">- 스마트스토어명<br>- 스마트스토어 URL</p></li><li>취급상품유형<p class="sub-text text-sub">(애완용품 종합 판매사, 트렌드 편집샵, 브랜드 본사, 자체 브랜드 판매사 중 택1)</p></li><li>주력 취급 상품군<p class="sub-text text-sub">(강아지용품, 고양이용품, 패션전문, 핸드메이드 가구 등)</p></li><li>대표상품<p class="sub-text text-sub">(상품정보, 가격 등 확인할 수 있는 스마트스토어 상품 URL)</p></li></ol></dd></dl>
+                    </div>
+                    <p class="text-primary">
+                        ・ 스타일윈도 노출 문의는 1:1 문의를 이용해 주세요. <a href="https://help.sell.smartstore.naver.com/mail/form.nhn?alias=Stylewindow">1:1 문의하기</a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="closeAllModal()">닫기</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            var modal_window_tablist = document.querySelectorAll('.modal-window .modal-body .tab li');
+            var modal_window_contents = document.querySelectorAll('.modal-window .modal-body .content');
+            function modal_window_show(n) {
+                for (var i=0;i<10;++i) {
+                    if (i == n) {
+                        modal_window_tablist[i].classList.add('active');
+                        modal_window_contents[i].style.display = 'block';
+                    }
+                    else {
+                        modal_window_tablist[i].classList.remove('active');
+                        modal_window_contents[i].style.display = 'none';
+                    }
+                }
+            }
+            modal_window_show(0);
+        </script>
+        <!-- Modal : 수수료 -->
+        <div class="modal modal-fee" style="display: none">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" onclick="closeAllModal()">
                         <span>×</span>
                     </button>
                     <h3 class="modal-title">수수료 안내</h3>
@@ -42,19 +553,38 @@
                         </dd>
                     </dl>
                 </div>
+                <div class="modal-footer">
+                    <button onclick="closeAllModal()">닫기</button>
+                </div>
             </div>
         </div>
         <script>
-            var modal = document.querySelector('.modal');
-            var closeBtn = document.querySelector('.modal .close');
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+            var modal_document = document.querySelector('.modal-document');
+            var modal_window = document.querySelector('.modal-window');
+            var modal_fee = document.querySelector('.modal-fee');
+
+            var modals = document.querySelectorAll('.modal');
+            function closeAllModal() {
+                for (var i=0;i<modals.length;++i) {
+                    modals[i].style.display = "none";
                 }
             }
+
+            function showModal_document() {
+                modal_document.style.display = "block";
+            }
+
+            function showModal_window() {
+                modal_window.style.display = "block";
+            }
+
+            function showModal_fee() {
+                modal_fee.style.display = "block";
+            }
+
+            // window.onclick = function(event) {
+            //     closeAllModal();
+            // }
         </script>
         <!-- 네비게이션 바 -->
         <nav>
@@ -272,37 +802,37 @@
             <h2 class="title"></h2>
             <ul class="join-list">
                 <li class="document">
-                    <a href="javascript:alert('팝업창 미구현')">
+                    <a href="javascript:void(0)" onclick="showModal_document()">
                         <h3 class="sub-title"></h3>
                         <p class="detail"></p>
                     </a>
                 </li>
                 <li class="window">
-                    <a href="javascript:alert('팝업창 미구현')">
+                    <a href="javascript:void(0)" onclick="showModal_window()">
                         <h3 class="sub-title"></h3>
                         <p class="detail"></p>
                     </a>
                 </li>
                 <li class="safety-service">
-                    <a href="javascript:alert('팝업창 미구현')">
+                    <a href="https://sell.smartstore.naver.com/#/home/about/popup/downloadEscrowDocument" target="_blank">
                         <h3 class="sub-title"></h3>
                         <p class="detail"></p>
                     </a>
                 </li>
                 <li class="manual">
-                    <a href="javascript:alert('팝업창 미구현')">
+                    <a href="https://sell.smartstore.naver.com/#/login" target="_blank">
                         <h3 class="sub-title"></h3>
                         <p class="detail"></p>
                     </a>
                 </li>
                 <li class="fee">
-                    <a href="javascript:alert('팝업창 미구현')">
+                    <a href="javascript:void(0)" onclick="showModal_fee()">
                         <h3 class="sub-title"></h3>
                         <p class="detail"></p>
                     </a>
                 </li>
                 <li class="training-course">
-                    <a href="javascript:alert('팝업창 미구현')">
+                    <a href="http://edu.shopping.naver.com/redirect.html" target="_blank">
                         <h3 class="sub-title"></h3>
                         <p class="detail"></p>
                     </a>

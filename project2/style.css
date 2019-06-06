@@ -804,6 +804,13 @@ footer .inner-footer address .copy-navercorp:hover {
     height: 100%;
     background-color: rgba(0,0,0,0.5);
 }
+.modal .text-sub {
+    color: #767a83;
+}
+.modal strong {
+    font-weight: 600;
+    color: #767a83;
+}
 .modal .modal-content {
     background-color: #fff;
     width: 650px;
@@ -885,4 +892,159 @@ footer .inner-footer address .copy-navercorp:hover {
 }
 .modal .modal-content .modal-body ul li.text-primary:before {
     background-color: #00c73c;
+}
+
+.modal .modal-content .modal-body ul.tab {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    list-style-type: none;
+}
+.modal .modal-content .modal-body ul.tab li {
+    display: table-cell;
+    background-color: #fff;
+    border: 1px solid #e3e7ee;
+    text-align: center;
+}
+
+.modal .modal-content .modal-body ul.tab li:before {
+    display: none;
+}
+.modal .modal-content .modal-body ul.tab li a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    color: #767a83;
+    font-size: 12.5px;
+    cursor: pointer;
+}
+.modal .modal-content .modal-body ul.tab li.active {
+    background-color: #00c73c;
+    border-color: #00c73c;
+    border: 1px solid #e3e7ee;
+}
+.modal .modal-content .modal-body ul.tab li.active a {
+    color: #fff;
+}
+.modal .modal-content .modal-body ul.has-partition {
+    height: 75px;
+}
+.modal .modal-content .modal-body ul.has-partition li {
+    float: left;
+    width: 50%;
+}
+.modal .modal-content .modal-footer {
+    padding: 0 20px 20px;
+}
+.modal .modal-content .modal-footer button {
+    width: 160px;
+    padding: 4px 20px;
+    border: 1px solid;
+    margin: 0 2px 5px;
+    background-color: #fff;
+    border-color: #dbdde2;
+    color: #666;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.modal .modal-content .modal-footer button.btn-primary {
+    background-color: #00c73c;
+    border-color: #00ae34;
+    color: #fff;
+}
+.modal-document .modal-content .modal-body dl {
+    margin: 20px 0 20px 0;
+    border: 1px solid #e3e7ee;
+}
+.modal-document .modal-content .modal-body p {
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    line-height: 18px;
+    color: #767a83;
+}
+.modal-document .modal-content .modal-body a.btn {
+    margin: 0 10px;
+    color: #767a83;
+    padding: 1px 5px;
+    border: 1px solid #dbdde2;
+    font-size: 12px;
+    line-height: 18px;
+}
+.modal-window .modal-content .modal-body .tab li {
+    float: left;
+    width: 20%;
+}
+.modal-window .modal-content .modal-body dl {
+    max-height: 450px;
+    margin: 20px 0;
+    overflow: auto;
+}
+.modal-window .modal-content .modal-body p {
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    line-height: 18px;
+}
+.modal-window .modal-content .modal-body p a:link {
+    color: #00c73c;
+    text-decoration: underline;
+}
+.modal-window .modal-content .modal-body p a:visited {
+    color: #00c73c;
+    text-decoration: underline;
+}
+.modal-window .modal-content .modal-body ol {
+    padding: 0 0 0 17px;
+}
+.modal-window .modal-content .modal-body ol li {
+    display: list-item;
+    padding-bottom: 3px;
+    color: #4d5159;
+}
+.modal-window .modal-content .modal-body ol li p {
+    margin: 0;
+}
+.modal-window .modal-content .modal-body dl.sub {
+    padding-top: 10px;
+    margin: 0;
+    border: none;
+}
+.modal-window .modal-content .modal-body dl.sub dt {
+    padding: 0 0 5px;
+    font-weight: 600;
+    background-color: transparent;
+    font-size: 13px;
+}
+.modal-window .modal-content .modal-body dl.sub dd {
+    padding: 0 0 5px 15px;
+    color: #767a83;
+    font-size: 13px;
+    border: none;
+}
+.modal-window .modal-content .modal-body dl.sub li:before {
+    position: relative;
+    top: -5px;
+    left: -6px;
+    display: inline-block;
+    width: 3px;
+    height: 1px;
+    background-color: #767a83;
+    content: "";
+}
+.modal-window h4 {
+    font-weight: 400;
+    font-size: 15px;
+}
+.modal-window .modal-content .modal-body .wrap-list {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e3e7ee;
+}
+.modal-window .modal-content .modal-body .wrap-list dl.sub {
+    float: left;
+    margin: 0;
+    padding: 25px 30px 20px;
+    width: 50%;
+    border-left: 1px solid #e3e7ee;
 }
