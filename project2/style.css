@@ -92,7 +92,7 @@ nav .logo {
 .intro {
     position: relative;
     height: 524px;
-    background-image: url(images/intro_background.jpg);
+    background-image: url(images/intro_background1.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -354,12 +354,34 @@ nav .logo {
 }
 .tip-area .tip-detail {
     display: inline-block;
-    width: 400px;
     height: 18px;
     background-image: url(images/sp_about_pc.png);
     background-repeat: no-repeat;
-    background-position: 0 -195px;
     vertical-align: middle;
+}
+.tip-area .tip-detail.detail01 {
+    width: 450px;
+    background-position: 0 -170px;
+}
+.tip-area .tip-detail.detail02 {
+    width: 400px;
+    background-position: 0 -195px;
+}
+.tip-area .tip-detail.detail03 {
+    width: 338px;
+    background-position: 0 -220px;
+}
+.tip-area .tip-detail.detail04 {
+    width: 620px;
+    background-position: 0 -240px;
+}
+.tip-area .tip-detail.detail05 {
+    width: 655px;
+    background-position: 0 -265px;
+}
+.tip-area .tip-detail.detail06 {
+    width: 530px;
+    background-position: 0 -290px;
 }
 .join {
     background-color: #fff;
@@ -1047,4 +1069,32 @@ footer .inner-footer address .copy-navercorp:hover {
     padding: 25px 30px 20px;
     width: 50%;
     border-left: 1px solid #e3e7ee;
+}
+.modal-term .modal-content .modal-body .panel {
+    max-height: 520px;
+    padding: 15px 20px;
+    border: 1px solid #dbdde2;
+    overflow: auto;
+}
+.modal-term .modal-content .modal-body .panel dl {
+    border: none;
+}
+
+.modal-term .modal-content .modal-body .panel dl dt {
+    padding: 0 0 5px 0;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.modal-term .modal-content .modal-body .panel dl dd {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.modal-term .modal-content .modal-body .panel dl dd+dt {
+    padding-top: 25px;
+}
+.modal-term .modal-content .modal-body .panel dl ol li {
+    display: list-item;
 }
